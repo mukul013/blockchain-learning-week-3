@@ -1,13 +1,35 @@
-# Sample Hardhat Project
+# Debugging Scenario 
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+To run this git clone this repository.
 
-Try running some of the following tasks:
+Install all dependencies : 
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+npm i
 ```
+
+Compile the Hardhat Token :
+
+```shell
+npx hardhat compile
+```
+
+Run the Test Cases :
+
+```shell
+npx hardhat test
+```
+
+
+The test will give error because we are able to burn tokens when locked.
+
+In "JoyBoyToken" , there is correct burn function commented , uncomment that burn function and comment the incorrect burn function.
+
+
+Run the Test Cases Again:
+
+```shell
+npx hardhat test
+```
+
+The test should work fine now.
