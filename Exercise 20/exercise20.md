@@ -10,6 +10,7 @@ There will be two primary smart contracts in the decentralized banking platform:
 The AdvancedToken contract will have the following primary functions:
 
 **deposit() -** Allows users to deposit ERC-20 tokens and get an equivalent amount of AdvancedToken tokens in return.
+
 **withdraw() -** Allows users to withdraw ERC-20 tokens by burning their AdvancedToken tokens.
 **mint() -** Allows the contract owner to mint new AdvancedToken tokens, up to the maximum supply limit.
 **burn() -** Allows users to burn their AdvancedToken tokens.
