@@ -8,7 +8,7 @@ There will be two primary smart contracts in the decentralized banking platform:
 
 ### Primary Functions
 
-The AdvancedToken contract will have the following primary functions:
+#### The AdvancedToken contract will have the following primary functions:
 
 **deposit() -** Allows users to deposit ERC-20 tokens and get an equivalent amount of AdvancedToken tokens in return.
 
@@ -21,7 +21,9 @@ The AdvancedToken contract will have the following primary functions:
 **lockTokens() -** Allows users to lock their AdvancedToken tokens for a specified duration.
 
 
-The LendingPool contract will have the following primary functions:
+
+
+#### The LendingPool contract will have the following primary functions:
 
 **lendTokens() -** Allows users to lend their AdvancedToken tokens to earn interest.
 
