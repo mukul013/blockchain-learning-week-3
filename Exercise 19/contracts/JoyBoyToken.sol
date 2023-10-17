@@ -34,12 +34,21 @@ contract JoyBoyToken is ERC20 {
         _mint(to, amount);
     }
 
+    //correct burn function which will not burn tokens when locked 
+    // function burn(uint256 amount) public {
+    //     require(balanceOf(msg.sender) >= amount, "Not enough tokens");
+    //     require(lockedUntil[msg.sender] <= block.timestamp, "Tokens are locked");
+    //     _burn(msg.sender, amount);
+    //     maxSupply -= amount;
+    // }
+
+    
+    //incorrect burn fuction which will burn tokens when locked
     function burn(uint256 amount) public {
         require(balanceOf(msg.sender) >= amount, "Not enough tokens");
         _burn(msg.sender, amount);
         maxSupply -= amount;
     }
-    
     
     function lockTokens(address user, uint256 duration) public onlyOwner {
         require(balanceOf(user) > 0, "No tokens to lock");
@@ -50,10 +59,5 @@ contract JoyBoyToken is ERC20 {
     function isTokensLocked(address user) public view returns (bool) {
         return lockedUntil[user] > block.timestamp;
     }
-
-    function transfer(address to, uint256 amount) public override tokensUnlocked(to) returns (bool) {
-        require(super.transfer(to, amount), "Failed to send Token");
-        return true;
-    }
-
+    
 }
